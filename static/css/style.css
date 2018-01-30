@@ -1,0 +1,29 @@
+body {
+    background: #888888;
+}
+#main {
+    margin: 0 auto;
+    width: 92%;
+}
+#search-section {
+    margin: 20px 0;
+    border: 1px solid #cccccc;
+}
+
+.tweet-container {
+    margin: 20px 0;
+    background: #f1f1f1;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+.tweet-container img {
+    margin: 32px 0 32px 12px;
+    height: 80px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+}
+
+.tweet-container h2, .tweet-container p {
+    margin: 32px 0;
+}
