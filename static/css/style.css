@@ -1,3 +1,5 @@
+/* MAIN */
+
 body {
     background: #888888;
 }
@@ -5,25 +7,59 @@ body {
     margin: 0 auto;
     width: 92%;
 }
+
+/* SEARCH SECTION */
+
 #search-section {
     margin: 20px 0;
     border: 1px solid #cccccc;
 }
+
+/* RESULT SECTION */
 
 .tweet-container {
     margin: 20px 0;
     background: #f1f1f1;
     border: 1px solid #cccccc;
     border-radius: 5px;
+    transition: all 0.8s ease-in-out;
 }
-
+.tweet-container:hover {
+    background: #c5c5c5;
+}
 .tweet-container img {
     margin: 32px 0 32px 12px;
     height: 80px;
     border: 1px solid #ffffff;
-    border-radius: 5px;
+    border-radius: 50%;
+}
+.tweet-container h2 {
+    margin-top: 32px;
+    font-size: 22px;
+}
+.tweet-container h2 a, 
+.tweet-container h2 a:link, 
+.tweet-container h2 a:visited {
+    color: #333333;
+    text-decoration: none;
+    transition: all 0.8s ease-in-out;
+}
+.tweet-container h2 a:hover {
+    color: #f53f19;
 }
 
-.tweet-container h2, .tweet-container p {
-    margin: 32px 0;
+.tweet-container span {
+    font-size: 18px;
+    color: #657786;
+}
+.tweet-container p {
+    margin: 12px 0;
+    font-size: 14px;
+}
+
+.tweet-container .follower-info,
+.tweet-container .retweet-count {
+    font-size: 12px;
+    font-style: italic;
+    color: #657786;
 }

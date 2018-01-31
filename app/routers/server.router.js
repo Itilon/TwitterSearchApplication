@@ -9,16 +9,25 @@ const attachTo = (app, data) => {
         })
 
         .get('/search', (req, res) => {
-            const searchTerm = req.query.search;
+            const searchTerm = req.query.search[0];
+            const searchStartDate = req.query.search[1];
 
             data.get('search/tweets', 
-                    { q: `${searchTerm} since:2018-01-30`, count: 5 }, 
+                    { q: `${searchTerm} since:${searchStartDate}`, count: 5 }, 
                     (err, data, response) => {
 
                         const twitterData = data.statuses;
+                        const dateContainer = [];
+
+                        data.statuses.forEach((status) => {
+                            let date = status.created_at;
+                            date = date.slice(4).substring(0, 15);
+                            dateContainer.push(date);
+                        });
 
                         res.render('search', {
-                            data: twitterData
+                            data: twitterData,
+                            dateList: dateContainer
                         });
                     });
         });

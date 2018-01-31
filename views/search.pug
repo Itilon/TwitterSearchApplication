@@ -5,15 +5,29 @@ block body
     main(id="main")
         +search()
         section(id="result-section")
-            each tweet in data
+            each tweet, index in data
                 div(class="tweet-container container-fluid")
                     div(class="row")
                         div(class="col-sm-2")
                             img(src=tweet.user.profile_image_url_https alt=tweet.user.screen_name)
                         div(class="col-sm-10")
                             h2
-                                =tweet.user.name
-                                span / 
+                                a(href="https://twitter.com/" + tweet.user.screen_name)
+                                    =tweet.user.name
+                                | &nbsp;
+                                span /@
                                     =tweet.user.screen_name
+                                | &nbsp;
+                                span (
+                                    =dateList[index]
+                                    | )
+                            p(class="follower-info")
+                                | Followers:&nbsp;
+                                =tweet.user.followers_count
                             p 
-                                = tweet.text
+                                =tweet.text
+                            if tweet.retweet_count
+                                p(class="retweet-count")
+                                    | Retweeted&nbsp;
+                                    = tweet.retweet_count
+                                    | &nbsp;time(s)
