@@ -12,6 +12,8 @@ block body
                             img(src=tweet.user.profile_image_url_https alt=tweet.user.screen_name)
                         div(class="col-sm-10")
                             h2
+                                if tweet.user.verified
+                                    i(class="fa fa-heart")
                                 a(href="https://twitter.com/" + tweet.user.screen_name)
                                     =tweet.user.name
                                 | &nbsp;
