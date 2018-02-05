@@ -27,7 +27,7 @@ block body
                                 | Followers:&nbsp;
                                 =tweet.user.followers_count
                             p 
-                                =tweet.text
+                                =tweet.full_text
                             if tweet.retweet_count
                                 p(class="retweet-count")
                                     | Retweeted&nbsp;
