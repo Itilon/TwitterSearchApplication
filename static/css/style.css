@@ -5,20 +5,66 @@ body {
 }
 #main {
     margin: 0 auto;
-    width: 92%;
+    width: 84%;
 }
 
 /* SEARCH SECTION */
 
 #search-section {
     margin: 20px 0;
+    padding: 4rem 4rem;
     border: 1px solid #cccccc;
 }
+#search-nav {
+    margin: 0;
+    padding: 0;
+}
+#search-nav .search-selector {
+    display: inline-block;
+    margin-right: 4px;
+    padding: 4px 12px;
+    background: #c5c5c5;
+    text-decoration: none;
+    border-top: 1px solid #999999;
+    border-right: 1px solid #999999;
+    border-left: 1px solid #999999;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+#search-nav .search-selector:hover {
+    cursor: pointer;
+}
+#advanced-search {
+    background: #f1f1f1;
+    border: 1px solid #cccccc;
+    box-shadow: 2px 2px 4px #999999;
+}
+#advanced-search h3 {
+    width: 48%;
+    margin: 24px auto;
+    text-align: center;
+}
 
-#verified-users {
+#advanced-search input {
+    width: 80%;
+    margin-left: 24px;
+}
+#advanced-search #verified-users {
     height: 28px;
     width: 28px;
-    box-shadow: none;
+}
+.date-form::-webkit-datetime-edit-text { 
+    padding: 0 6px;
+}
+.date-form::-webkit-inner-spin-button { 
+    display: none;
+}
+#search-section label {
+    margin-left: 24px;
+    padding: 8px 0;
+}
+#search-section button {
+    margin: 0 0 24px 20px;
 }
 
 /* RESULT SECTION */
@@ -41,7 +87,7 @@ body {
 }
 .tweet-container i {
     margin-right: 8px;
-    color: #f53f19;
+    color: #657786;
 }
 .tweet-container h2 {
     margin-top: 32px;

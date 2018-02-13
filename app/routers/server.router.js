@@ -1,4 +1,4 @@
-const { Router } = require('express');
+const {Router} = require('express');
 
 const attachTo = (app, controllers) => {
     const router = new Router;
@@ -13,4 +13,4 @@ const attachTo = (app, controllers) => {
     app.use('/', router);
 };
 
-module.exports = { attachTo };
+module.exports = {attachTo};

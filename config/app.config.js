@@ -6,7 +6,7 @@ const configApp = (app) => {
     app.set('view engine', 'pug');
 
     app.use(bodyParser.json());
-    app.use(bodyParser.urlencoded({ extended: true }));
+    app.use(bodyParser.urlencoded({extended: true}));
 
     app.use('/static', express.static(
         path.join(__dirname, '../static'))
@@ -17,4 +17,4 @@ const configApp = (app) => {
     );
 };
 
-module.exports = { configApp };
+module.exports = {configApp};
