@@ -24,7 +24,6 @@ class Data {
             tweet_mode: 'extended',
         },
         (err, data, response) => {
-            console.log(response);
             return data;
         });
     }
