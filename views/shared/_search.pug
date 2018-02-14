@@ -1,18 +1,24 @@
 mixin search
     section(id="search-section" class="jumbotron")
-        form(action="/search" method="get")
-            div(class="container")
-                div(class="row")
-                    div(class="col-sm-6 form-group")
-                        label(for="search-field") Search
-                        input(id="search-field" class="form-control" type="search" name="search" placeholder="Enter Your Search")
-                        label(for="followers-number") Enter Minimum Number of Followers
-                        input(id="followers-number" class="form-control" type="number" name="search")
-                    div(class="col-sm-6 form-group")
-                        label(for="after-date-field") Search After
-                        input(id="after-date-field" class="form-control" type="date" name="search")
-                        label(for="before-date-field") Search Before
-                        input(id="before-date-field" class="form-control" type="date" name="search")
-                        label(for="verified-users") Check for Verified Users Only
-                        input(id="verified-users" class="form-control" type="checkbox" name="search")
-                button(class="btn btn-primary") Search
+        header(id="search-header")
+            ul(id="search-nav")
+                li.search-selector Basic Search
+                li.search-selector Advanced Search
+        div(id="advanced-search")
+            h3 Advanced Search
+            form(action="/search" method="get")
+                div(class="container")
+                    div(class="row")
+                        div(class="col-md-6 form-group")
+                            label(for="search-field") Search
+                            input(id="search-field" class="form-control" type="search" name="search" placeholder="Enter Your Search")
+                            label(for="followers-number") Enter a Minimum Number of Followers
+                            input(id="followers-number" class="form-control" type="number" name="search")
+                            label(for="verified-users") Check with Verified Users
+                            input(id="verified-users" class="form-control" type="checkbox" name="search")
+                        div(class="col-md-6 form-group")
+                            label(for="after-date-field") Search After
+                            input(id="after-date-field" class="form-control date-form" type="date" name="search")
+                            label(for="before-date-field") Search Before
+                            input(id="before-date-field" class="form-control date-form" type="date" name="search")
+                    button(class="btn btn-primary") Search

@@ -1,7 +1,5 @@
 module.exports = () => {
-
     const followersHelper = (twitterData, numberOfFollowers) => {
-
         let data = [];
 
         if (numberOfFollowers.length === 0) {
@@ -14,11 +12,10 @@ module.exports = () => {
              });
         }
 
-        return data
+        return data;
     };
 
     const verifiedHelper = (twitterData, verified) => {
-        
         let data = [];
 
         if (verified === undefined) {
@@ -35,7 +32,6 @@ module.exports = () => {
     };
 
     const dateHelper = (twitterData) => {
-
         const dateContainer = [];
 
         twitterData.forEach((status) => {
@@ -50,6 +46,6 @@ module.exports = () => {
     return {
         followersHelper,
         verifiedHelper,
-        dateHelper
+        dateHelper,
     };
-}
+};
