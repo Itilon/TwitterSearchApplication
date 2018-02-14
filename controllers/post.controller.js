@@ -8,6 +8,8 @@ module.exports = (data, helpers) => {
     const getSearch = (req, res) => {
         const search = req.query.search;
 
+        console.log(search);
+
         const searchTerm = search[0];
         const numberOfFollowers = search[1];
         const verified = search[2];
