@@ -8,21 +8,13 @@ module.exports = (data, helpers) => {
     const getSearch = (req, res) => {
         const search = req.query.search;
 
-        const searchTerm = search[0];
-        const numberOfFollowers = search[1];
-
-        let verified;
-        let searchStartDate;
-        let searchEndDate;
-
-        if (search.length === 5) {
-            verified = search[2];
-            searchStartDate = search[3];
-            searchEndDate = search[4];
-        } else {
-            searchStartDate = search[2];
-            searchEndDate = search[3];
-        }
+        const {
+            searchTerm,
+            numberOfFollowers,
+            verified,
+            searchStartDate,
+            searchEndDate,
+        } = searchHelper.queryHelper(search);
 
         const numberOfResults = 500;
 
@@ -38,9 +30,11 @@ module.exports = (data, helpers) => {
                     verified
                 );
 
+                twitterData = searchHelper.imageHelper(twitterData);
+
                 const dateContainer = searchHelper.dateHelper(twitterData);
 
-                return res.render('search', {
+                return res.render('result', {
                     data: twitterData,
                     dateList: dateContainer,
                 });

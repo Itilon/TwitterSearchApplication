@@ -7,6 +7,9 @@ body {
     margin: 0 auto;
     width: 84%;
 }
+h1, h2, h3, h4, h5, h6 {
+    font-family: Poppins;
+}
 
 /* SEARCH SECTION */
 
@@ -14,6 +17,41 @@ body {
     margin: 20px 0;
     padding: 4rem 4rem;
     border: 1px solid #cccccc;
+}
+#search-section h3 {
+    width: 48%;
+    margin: 24px auto;
+    font-size: 22px;
+    text-align: center;
+    text-shadow: 2px 2px #c5c5c5;
+    letter-spacing: 1.2px;
+}
+#search-section label,
+#search-section input {
+    margin-left: 24px;
+}
+#search-section label {
+    padding: 16px 0 2px 0;
+    font-size: 14px;
+}
+#search-section input {
+    width: 84%;
+    font-size: 12px;
+}
+#search-section input:focus {
+    border-color: rgba(197, 197, 197, 1);
+    box-shadow: 0 0 0 0.2rem rgba(195, 195, 195, 0.6)
+}
+#search-section button {
+    margin: 0 0 24px 20px;
+    background-color: #333333;
+    font-size: 14px;
+    border: 1px solid #ffffff;
+    box-shadow: 1px 1px 1px #222222;
+}
+#search-section button:hover {
+    transform: scale(1.02);
+    background-color: #666666;
 }
 #search-nav {
     margin: 0;
@@ -24,6 +62,7 @@ body {
     margin-right: 4px;
     padding: 4px 12px;
     background: #c5c5c5;
+    font-size: 14px;
     text-decoration: none;
     border-top: 1px solid #999999;
     border-right: 1px solid #999999;
@@ -39,19 +78,9 @@ body {
     border: 1px solid #cccccc;
     box-shadow: 2px 2px 4px #999999;
 }
-#advanced-search h3 {
-    width: 48%;
-    margin: 24px auto;
-    text-align: center;
-}
-
-#advanced-search input {
-    width: 80%;
-    margin-left: 24px;
-}
 #advanced-search #verified-users {
-    height: 28px;
-    width: 28px;
+    height: 26px;
+    width: 26px;
 }
 .date-form::-webkit-datetime-edit-text { 
     padding: 0 6px;
@@ -59,18 +88,12 @@ body {
 .date-form::-webkit-inner-spin-button { 
     display: none;
 }
-#search-section label {
-    margin-left: 24px;
-    padding: 8px 0;
-}
-#search-section button {
-    margin: 0 0 24px 20px;
-}
 
 /* RESULT SECTION */
 
 .tweet-container {
     margin: 20px 0;
+    padding: 2rem 4rem;
     background: #f1f1f1;
     border: 1px solid #cccccc;
     border-radius: 5px;
@@ -79,9 +102,18 @@ body {
 .tweet-container:hover {
     background: #c5c5c5;
 }
-.tweet-container img {
-    margin: 32px 0 32px 12px;
-    height: 80px;
+.tweet-inner-container {
+    background: #aaaaaa;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px #666666;
+}
+.tweet-container .img {
+    height: 84%;
+    width: 92%;
+    margin: 8% 4%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
     border: 1px solid #ffffff;
     border-radius: 50%;
 }
@@ -91,7 +123,7 @@ body {
 }
 .tweet-container h2 {
     margin-top: 32px;
-    font-size: 22px;
+    font-size: 18px;
 }
 .tweet-container h2 a, 
 .tweet-container h2 a:link, 
@@ -105,12 +137,13 @@ body {
 }
 
 .tweet-container span {
-    font-size: 18px;
+    font-size: 16px;
     color: #657786;
 }
 .tweet-container p {
     margin: 12px 0;
-    font-size: 14px;
+    font-size: 12px;
+    color: #ffffff;
 }
 
 .tweet-container .follower-info,

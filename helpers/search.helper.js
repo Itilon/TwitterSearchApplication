@@ -1,4 +1,29 @@
 module.exports = () => {
+    const queryHelper = (search) => {
+        const searchTerm = search[0];
+        const numberOfFollowers = search[1];
+
+        let verified;
+        let searchStartDate;
+        let searchEndDate;
+
+        if (search.length === 5) {
+            verified = search[2];
+            searchStartDate = search[3];
+            searchEndDate = search[4];
+        } else {
+            searchStartDate = search[2];
+            searchEndDate = search[3];
+        }
+
+        return {
+            searchTerm,
+            numberOfFollowers,
+            verified,
+            searchStartDate,
+            searchEndDate,
+        };
+    };
     const followersHelper = (twitterData, numberOfFollowers) => {
         let data = [];
 
@@ -31,6 +56,17 @@ module.exports = () => {
         return data;
     };
 
+    const imageHelper = (twitterData) => {
+        twitterData.forEach((status) => {
+            const imageUrl = status.user.profile_image_url_https;
+            const urlMain = imageUrl.substring(0, imageUrl.indexOf('_normal'));
+            const urlEnd = imageUrl.substring(imageUrl.indexOf('_normal') + 7);
+            status.user.profile_image_url_https = `${urlMain}${urlEnd}`;
+        });
+
+        return twitterData;
+    };
+
     const dateHelper = (twitterData) => {
         const dateContainer = [];
 
@@ -44,8 +80,10 @@ module.exports = () => {
     };
 
     return {
+        queryHelper,
         followersHelper,
         verifiedHelper,
+        imageHelper,
         dateHelper,
     };
 };
